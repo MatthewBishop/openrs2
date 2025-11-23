@@ -1,6 +1,6 @@
 package org.openrs2.compress.gzip
 
-import com.google.common.io.LittleEndianDataOutputStream
+import org.openrs2.util.io.writeInt
 import java.io.DataOutputStream
 import java.io.OutputStream
 import java.util.zip.CRC32
@@ -53,9 +53,8 @@ public class JagexGzipOutputStream(
                 drain()
             }
 
-            val dataOutput = LittleEndianDataOutputStream(output)
-            dataOutput.writeInt(checksum.value.toInt())
-            dataOutput.writeInt(deflater.bytesRead.toInt())
+            output.writeInt(checksum.value.toInt())
+            output.writeInt(deflater.totalIn)
 
             deflater.end()
             output.close()

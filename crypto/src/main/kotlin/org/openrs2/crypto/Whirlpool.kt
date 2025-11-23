@@ -1,8 +1,8 @@
 package org.openrs2.crypto
 
-import com.google.common.base.Preconditions
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.ByteBufUtil
+import org.openrs2.util.Preconditions
 
 public fun ByteBuf.whirlpool(): ByteArray {
     return whirlpool(readerIndex(), readableBytes())

@@ -1,10 +1,10 @@
 package org.openrs2.buffer
 
-import com.google.common.base.Preconditions
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.ByteBufUtil
 import io.netty.buffer.Unpooled
 import io.netty.util.ByteProcessor
+import org.openrs2.util.Preconditions
 import org.openrs2.util.charset.Cp1252Charset
 import java.nio.charset.Charset
 import java.util.zip.CRC32
